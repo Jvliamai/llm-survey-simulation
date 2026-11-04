@@ -1,12 +1,6 @@
 # Replicating and Extending LLM-Based Survey Simulation in a German-Language Context
 
-| Research question | Scripts | 
-|---|---|
-| RQ1: replication | `experiments/extension_a_replication.py` |
-| RQ2: subgroup-aware (stratified) rectification | `experiments/extension_b_stratified.py`, `experiments/extension_b_rmse.py` | 
-| RQ3: budget allocation between adaptation (Domain-FT, ICL) and rectification | `experiments/extension_c_allocation.py`, `experiments/extension_c_figure.py` | 
-| Predictability of the focal questions | `experiments/predictability.py`, `experiments/llm_correlation.py`, `experiments/extension_c_correlation.py` | 
-
+Replication of Krsteski et al. (2026) on SOEP. Synthetic responses from three open-weight LLMs are combined with a small human sample via rectification to estimate population means, extended by stratified rectification for subgroups and a fixed-budget comparison of fine-tuning, in-context learning and rectification.
 
 ## Data protection
 
