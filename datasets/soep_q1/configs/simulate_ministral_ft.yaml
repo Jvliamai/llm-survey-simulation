@@ -1,0 +1,19 @@
+# Ministral 8B Instruct 2410 | ft | soep_q1 
+
+model_key: ministral
+method: ft
+hf_model: mistralai/Ministral-8B-Instruct-2410
+
+adapter: outputs/models/ministral/lora   # set after fine-tuning
+
+language: de          
+batch_size: 32
+max_new_tokens: 8     
+flash_attention: false
+enable_thinking: false  # Qwen3 ships a reasoning mode that breaks single-letter output
+seed: 42
+
+temperature: 0.7
+do_sample: true
+
+output_file: outputs/simulated_data/ministral/ft.csv

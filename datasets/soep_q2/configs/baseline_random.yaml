@@ -1,0 +1,7 @@
+# Non-LLM baseline: uniformly random answers.
+# Both focal questions are asked only in wave T
+
+model_key: baseline
+method: random
+seed: 0
+output_file: outputs/simulated_data/baseline/random.csv

@@ -1,0 +1,1291 @@
+{
+  "dataset": "q2",
+  "config": {
+    "n_trials": 100,
+    "trial_ns": [
+      100,
+      50,
+      150,
+      200
+    ],
+    "seed": 0,
+    "subgroup_col": "sex",
+    "shrinkage": 0.0,
+    "min_stratum_n": 10
+  },
+  "results": [
+    {
+      "model": "baseline:random",
+      "model_key": "baseline",
+      "method": "random",
+      "n_responses": 643,
+      "theta_true": 6.024883359253499,
+      "n_merged": 643,
+      "n_valid_pairs": 643,
+      "coverage_of_frame": 1.0,
+      "llm": {
+        "theta_hat": 4.77414364640884,
+        "bias": 20.759567252084857,
+        "bias_ci": [
+          19.157402706113245,
+          22.54727293692984
+        ],
+        "signed_bias": -20.759567252084857,
+        "signed_bias_ci": [
+          -22.547272936929843,
+          -19.157402706113245
+        ],
+        "ci_width": 0.5417818150758581,
+        "n_trials_used": 100,
+        "ess": {
+          "100": 218.00239994412797,
+          "50": 591.5516523381514,
+          "150": 95.9578378053962,
+          "200": 29.67544710716456
+        },
+        "coverage": {
+          "100": 0.0,
+          "50": 0.0,
+          "150": 0.0,
+          "200": 0.0
+        },
+        "ess_reportable": false
+      },
+      "rec_lam_opt": null,
+      "rec_lam_1": null
+    },
+    {
+      "model": "llama:concept_guided",
+      "model_key": "llama",
+      "method": "concept_guided",
+      "n_responses": 643,
+      "theta_true": 6.024883359253499,
+      "n_merged": 643,
+      "n_valid_pairs": 643,
+      "coverage_of_frame": 1.0,
+      "llm": {
+        "theta_hat": 5.724659300184165,
+        "bias": 4.9830684041915205,
+        "bias_ci": [
+          3.4085669110502805,
+          6.641781732192082
+        ],
+        "signed_bias": -4.9830684041915205,
+        "signed_bias_ci": [
+          -6.641781732192085,
+          -3.4085669110502805
+        ],
+        "ci_width": 0.491292475634828,
+        "n_trials_used": 100,
+        "ess": {
+          "100": 294.579956458693,
+          "50": 717.6485989030713,
+          "150": 128.2938972563362,
+          "200": 57.94858331004987
+        },
+        "coverage": {
+          "100": 0.15,
+          "50": 0.02,
+          "150": 0.34,
+          "200": 0.43
+        },
+        "ess_reportable": false
+      },
+      "rec_lam_opt": {
+        "theta_hat": 6.030148909901592,
+        "bias": 3.1049809830785358,
+        "bias_ci": [
+          0.16780984341030145,
+          7.601367220262018
+        ],
+        "signed_bias": 0.0873967234555309,
+        "signed_bias_ci": [
+          -6.845810480037472,
+          7.4734738334027115
+        ],
+        "ci_width": 0.9335674990533502,
+        "n_trials_used": 100,
+        "lam": 0.15041419310210763,
+        "ess": {
+          "100": 5.910996869022342,
+          "50": 8.050396852984507,
+          "150": 5.79603847674679,
+          "200": 4.452038922038104
+        },
+        "coverage": {
+          "100": 0.95,
+          "50": 0.98,
+          "150": 0.98,
+          "200": 0.96
+        },
+        "ess_reportable": true
+      },
+      "rec_lam_1": {
+        "theta_hat": 6.088157274401474,
+        "bias": 4.99685620994358,
+        "bias_ci": [
+          0.1225835741110736,
+          12.903662787830218
+        ],
+        "signed_bias": 1.050209794513997,
+        "signed_bias_ci": [
+          -9.734503396901147,
+          12.424411943326282
+        ],
+        "ci_width": 1.391647051233628,
+        "n_trials_used": 100,
+        "lam": 1.0,
+        "ess": {
+          "100": -52.26072437597672,
+          "50": -49.931486099897256,
+          "150": -55.36697824140701,
+          "200": -60.382091733548776
+        },
+        "coverage": {
+          "100": 0.93,
+          "50": 0.97,
+          "150": 0.94,
+          "200": 0.98
+        },
+        "ess_reportable": true
+      },
+      "subgroups": {
+        "variable": "sex",
+        "max_disparity": 0.7679246199735208,
+        "max_disparity_stratified": 0.396025368943949,
+        "rows": [
+          {
+            "subgroup": 1.0,
+            "n": 306,
+            "theta_true_group": 6.160130718954249,
+            "bias_synthesis": 7.639257294305699,
+            "bias_global_rect": 2.3201733985309407,
+            "bias_stratified_rect": 0.2821882098407196,
+            "abs_change": 5.319083895774758,
+            "rel_change_pct": 69.6282857192148,
+            "improved": true,
+            "abs_change_stratified": 7.357069084464979,
+            "rel_change_stratified_pct": 96.3060779462505,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          },
+          {
+            "subgroup": 2.0,
+            "n": 337,
+            "theta_true_group": 5.902077151335312,
+            "bias_synthesis": 2.463549522331308,
+            "bias_global_rect": 3.0880980185044615,
+            "bias_stratified_rect": 0.6782135787846686,
+            "abs_change": -0.6245484961731536,
+            "rel_change_pct": -25.35157058895974,
+            "improved": false,
+            "abs_change_stratified": 1.7853359435466394,
+            "rel_change_stratified_pct": 72.47006513531211,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          }
+        ]
+      }
+    },
+    {
+      "model": "llama:ft",
+      "model_key": "llama",
+      "method": "ft",
+      "n_responses": 643,
+      "theta_true": 6.024883359253499,
+      "n_merged": 643,
+      "n_valid_pairs": 643,
+      "coverage_of_frame": 1.0,
+      "llm": {
+        "theta_hat": 2.436372007366482,
+        "bias": 59.561507465799004,
+        "bias_ci": [
+          59.05486094572881,
+          60.220988531893404
+        ],
+        "signed_bias": -59.561507465799004,
+        "signed_bias_ci": [
+          -60.220988531893404,
+          -59.05486094572881
+        ],
+        "ci_width": 0.17848597550076156,
+        "n_trials_used": 100,
+        "ess": {
+          "100": 2802.7799132160603,
+          "50": 6428.117328280194,
+          "150": 1644.4486017169913,
+          "200": 1096.1390671726213
+        },
+        "coverage": {
+          "100": 0.0,
+          "50": 0.0,
+          "150": 0.0,
+          "200": 0.0
+        },
+        "ess_reportable": false
+      },
+      "rec_lam_opt": {
+        "theta_hat": 6.015051150700941,
+        "bias": 2.8036656824081176,
+        "bias_ci": [
+          0.2488706762994334,
+          8.056311306009796
+        ],
+        "signed_bias": -0.16319334277723513,
+        "signed_bias_ci": [
+          -7.5666752709120955,
+          5.959422726040148
+        ],
+        "ci_width": 0.9648905900607696,
+        "n_trials_used": 100,
+        "lam": 0.008312762582141477,
+        "ess": {
+          "100": 1.0316676559197346,
+          "50": 2.3078235719160602,
+          "150": 0.6761563949950091,
+          "200": 0.5043258763377474
+        },
+        "coverage": {
+          "100": 0.96,
+          "50": 0.94,
+          "150": 0.96,
+          "200": 0.97
+        },
+        "ess_reportable": true
+      },
+      "rec_lam_1": {
+        "theta_hat": 6.046486924493553,
+        "bias": 3.4875580033857636,
+        "bias_ci": [
+          0.20673427515199916,
+          9.325660872585134
+        ],
+        "signed_bias": 0.35857233993611387,
+        "signed_bias_ci": [
+          -6.53935966117397,
+          8.481486982539234
+        ],
+        "ci_width": 1.1119168321282877,
+        "n_trials_used": 100,
+        "lam": 1.0,
+        "ess": {
+          "100": -24.267471091042257,
+          "50": -22.052200370896404,
+          "150": -26.254729336437663,
+          "200": -27.611720382520573
+        },
+        "coverage": {
+          "100": 0.97,
+          "50": 0.99,
+          "150": 0.94,
+          "200": 0.96
+        },
+        "ess_reportable": true
+      },
+      "subgroups": {
+        "variable": "sex",
+        "max_disparity": 0.9393640972809563,
+        "max_disparity_stratified": 0.6278075344940057,
+        "rows": [
+          {
+            "subgroup": 1.0,
+            "n": 306,
+            "theta_true_group": 6.160130718954249,
+            "bias_synthesis": 60.68965517142859,
+            "bias_global_rect": 1.9240384892470555,
+            "bias_stratified_rect": 0.7689993752934738,
+            "abs_change": 58.76561668218154,
+            "rel_change_pct": 96.82970930727963,
+            "improved": true,
+            "abs_change_stratified": 59.920655796135115,
+            "rel_change_stratified_pct": 98.73289875643545,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          },
+          {
+            "subgroup": 2.0,
+            "n": 337,
+            "theta_true_group": 5.902077151335312,
+            "bias_synthesis": 58.47159376472072,
+            "bias_global_rect": 2.8634025865280117,
+            "bias_stratified_rect": 0.1411918407994681,
+            "abs_change": 55.60819117819271,
+            "rel_change_pct": 95.10291681436811,
+            "improved": true,
+            "abs_change_stratified": 58.33040192392126,
+            "rel_change_stratified_pct": 99.75852917321298,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          }
+        ]
+      }
+    },
+    {
+      "model": "llama:silicon_sampling",
+      "model_key": "llama",
+      "method": "silicon_sampling",
+      "n_responses": 643,
+      "theta_true": 6.024883359253499,
+      "n_merged": 643,
+      "n_valid_pairs": 643,
+      "coverage_of_frame": 1.0,
+      "llm": {
+        "theta_hat": 6.849355432780847,
+        "bias": 13.684448716295453,
+        "bias_ci": [
+          12.547359693875453,
+          14.949154584645651
+        ],
+        "signed_bias": 13.684448716295453,
+        "signed_bias_ci": [
+          12.547359693875453,
+          14.949154584645651
+        ],
+        "ci_width": 0.3942312335531834,
+        "n_trials_used": 100,
+        "ess": {
+          "100": 493.5604780074357,
+          "50": 1220.6311714546669,
+          "150": 258.5472806257328,
+          "200": 140.54998632239068
+        },
+        "coverage": {
+          "100": 0.0,
+          "50": 0.0,
+          "150": 0.0,
+          "200": 0.0
+        },
+        "ess_reportable": false
+      },
+      "rec_lam_opt": {
+        "theta_hat": 6.06198663341107,
+        "bias": 3.1098230822419954,
+        "bias_ci": [
+          0.21806162834461634,
+          9.038634999407865
+        ],
+        "signed_bias": 0.6158338999205808,
+        "signed_bias_ci": [
+          -7.039479224882724,
+          7.806695791439035
+        ],
+        "ci_width": 0.9462122842018016,
+        "n_trials_used": 100,
+        "lam": 0.11857285882994058,
+        "ess": {
+          "100": 3.177732001756532,
+          "50": 5.764118325322089,
+          "150": 2.350083935784339,
+          "200": 2.1092350768687753
+        },
+        "coverage": {
+          "100": 0.95,
+          "50": 0.98,
+          "150": 0.94,
+          "200": 0.99
+        },
+        "ess_reportable": true
+      },
+      "rec_lam_1": {
+        "theta_hat": 6.063206813996317,
+        "bias": 3.9268737752380902,
+        "bias_ci": [
+          0.18595633542857504,
+          11.77907054471312
+        ],
+        "signed_bias": 0.6360862519159217,
+        "signed_bias_ci": [
+          -9.146579465255284,
+          10.274648860677294
+        ],
+        "ci_width": 1.2825777001826089,
+        "n_trials_used": 100,
+        "lam": 1.0,
+        "ess": {
+          "100": -44.20976426690741,
+          "50": -40.83303874534412,
+          "150": -48.526236500250405,
+          "200": -51.27793170395642
+        },
+        "coverage": {
+          "100": 0.95,
+          "50": 0.92,
+          "150": 0.97,
+          "200": 0.92
+        },
+        "ess_reportable": true
+      },
+      "subgroups": {
+        "variable": "sex",
+        "max_disparity": 1.2117536831027955,
+        "max_disparity_stratified": 0.668143235280602,
+        "rows": [
+          {
+            "subgroup": 1.0,
+            "n": 306,
+            "theta_true_group": 6.160130718954249,
+            "bias_synthesis": 10.503978779670325,
+            "bias_global_rect": 3.420521201100382,
+            "bias_stratified_rect": 0.7777119220065564,
+            "abs_change": 7.083457578569943,
+            "rel_change_pct": 67.43594714996965,
+            "improved": true,
+            "abs_change_stratified": 9.726266857663768,
+            "rel_change_stratified_pct": 92.59602538797625,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          },
+          {
+            "subgroup": 2.0,
+            "n": 337,
+            "theta_true_group": 5.902077151335312,
+            "bias_synthesis": 16.74208144768014,
+            "bias_global_rect": 2.2087675179975865,
+            "bias_stratified_rect": 0.10956868672595436,
+            "abs_change": 14.533313929682553,
+            "rel_change_pct": 86.8070913106778,
+            "improved": true,
+            "abs_change_stratified": 16.632512760954185,
+            "rel_change_stratified_pct": 99.34554919489726,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          }
+        ]
+      }
+    },
+    {
+      "model": "ministral:concept_guided",
+      "model_key": "ministral",
+      "method": "concept_guided",
+      "n_responses": 643,
+      "theta_true": 6.024883359253499,
+      "n_merged": 643,
+      "n_valid_pairs": 643,
+      "coverage_of_frame": 1.0,
+      "llm": {
+        "theta_hat": 7.71327808471455,
+        "bias": 28.023691493377278,
+        "bias_ci": [
+          26.727348874000075,
+          29.544089557225956
+        ],
+        "signed_bias": 28.023691493377278,
+        "signed_bias_ci": [
+          26.727348874000075,
+          29.544089557225956
+        ],
+        "ci_width": 0.44418689378040355,
+        "n_trials_used": 100,
+        "ess": {
+          "100": 382.8113408544032,
+          "50": 947.3266200142971,
+          "150": 180.2068186026468,
+          "200": 92.12236945316896
+        },
+        "coverage": {
+          "100": 0.0,
+          "50": 0.0,
+          "150": 0.0,
+          "200": 0.0
+        },
+        "ess_reportable": false
+      },
+      "rec_lam_opt": {
+        "theta_hat": 6.013519068243835,
+        "bias": 3.1095743655253902,
+        "bias_ci": [
+          0.118750451856864,
+          8.222826186491098
+        ],
+        "signed_bias": -0.18862258954808428,
+        "signed_bias_ci": [
+          -6.667747017885705,
+          7.124592440661337
+        ],
+        "ci_width": 0.9560436378606129,
+        "n_trials_used": 100,
+        "lam": 0.07713972116117267,
+        "ess": {
+          "100": 2.355996313414573,
+          "50": 3.7396282090920914,
+          "150": 1.6693520188661575,
+          "200": 1.2889694717642448
+        },
+        "coverage": {
+          "100": 0.97,
+          "50": 0.94,
+          "150": 0.96,
+          "200": 0.98
+        },
+        "ess_reportable": true
+      },
+      "rec_lam_1": {
+        "theta_hat": 6.020980847145488,
+        "bias": 4.507802975991719,
+        "bias_ci": [
+          0.07927018057638432,
+          11.966832954257162
+        ],
+        "signed_bias": -0.06477323916905901,
+        "signed_bias_ci": [
+          -10.828829313343572,
+          10.699834567716595
+        ],
+        "ci_width": 1.4194207490221598,
+        "n_trials_used": 100,
+        "lam": 1.0,
+        "ess": {
+          "100": -54.07689662978425,
+          "50": -47.52422641297845,
+          "150": -56.79302484628112,
+          "200": -59.46035187833155
+        },
+        "coverage": {
+          "100": 0.96,
+          "50": 0.96,
+          "150": 0.98,
+          "200": 0.96
+        },
+        "ess_reportable": true
+      },
+      "subgroups": {
+        "variable": "sex",
+        "max_disparity": 0.13264797480063814,
+        "max_disparity_stratified": 0.09224827500720356,
+        "rows": [
+          {
+            "subgroup": 1.0,
+            "n": 306,
+            "theta_true_group": 6.160130718954249,
+            "bias_synthesis": 27.692307691858137,
+            "bias_global_rect": 0.3818169351587224,
+            "bias_stratified_rect": 0.38398518118378283,
+            "abs_change": 27.310490756699416,
+            "rel_change_pct": 98.62121662265945,
+            "improved": true,
+            "abs_change_stratified": 27.308322510674355,
+            "rel_change_stratified_pct": 98.61338684534662,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          },
+          {
+            "subgroup": 2.0,
+            "n": 337,
+            "theta_true_group": 5.902077151335312,
+            "bias_synthesis": 28.25540472551423,
+            "bias_global_rect": 0.24916896035808425,
+            "bias_stratified_rect": 0.29173690617657927,
+            "abs_change": 28.006235765156145,
+            "rel_change_pct": 99.11815469331357,
+            "improved": true,
+            "abs_change_stratified": 27.96366781933765,
+            "rel_change_stratified_pct": 98.9675005220785,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          }
+        ]
+      }
+    },
+    {
+      "model": "ministral:ft",
+      "model_key": "ministral",
+      "method": "ft",
+      "n_responses": 643,
+      "theta_true": 6.024883359253499,
+      "n_merged": 643,
+      "n_valid_pairs": 643,
+      "coverage_of_frame": 1.0,
+      "llm": {
+        "theta_hat": 2.8250092081031313,
+        "bias": 53.110972616301915,
+        "bias_ci": [
+          52.174249683719644,
+          54.151164536542574
+        ],
+        "signed_bias": -53.110972616301915,
+        "signed_bias_ci": [
+          -54.151164536542574,
+          -52.174249683719644
+        ],
+        "ci_width": 0.32841958301402735,
+        "n_trials_used": 100,
+        "ess": {
+          "100": 764.4386311172119,
+          "50": 1818.5236057517575,
+          "150": 427.2681041698704,
+          "200": 255.51593843932594
+        },
+        "coverage": {
+          "100": 0.0,
+          "50": 0.0,
+          "150": 0.0,
+          "200": 0.0
+        },
+        "ess_reportable": false
+      },
+      "rec_lam_opt": {
+        "theta_hat": 6.0462025877736885,
+        "bias": 3.039600551285387,
+        "bias_ci": [
+          0.20984494520913177,
+          8.317787732049279
+        ],
+        "signed_bias": 0.35385296691414325,
+        "signed_bias_ci": [
+          -7.976165369054482,
+          6.574677335977611
+        ],
+        "ci_width": 0.9551992487647953,
+        "n_trials_used": 100,
+        "lam": 0.017177457469164235,
+        "ess": {
+          "100": 1.145121396232139,
+          "50": 2.468453744332175,
+          "150": 0.7483762904774942,
+          "200": 0.5129525187652185
+        },
+        "coverage": {
+          "100": 0.97,
+          "50": 0.95,
+          "150": 0.98,
+          "200": 0.99
+        },
+        "ess_reportable": true
+      },
+      "rec_lam_1": {
+        "theta_hat": 6.075690976058931,
+        "bias": 4.459005962137115,
+        "bias_ci": [
+          0.2159144616147496,
+          12.754078531074457
+        ],
+        "signed_bias": 0.8432962727246038,
+        "signed_bias_ci": [
+          -8.052773186269338,
+          12.686079969574308
+        ],
+        "ci_width": 1.290055757060844,
+        "n_trials_used": 100,
+        "lam": 1.0,
+        "ess": {
+          "100": -44.2572127484128,
+          "50": -41.26607632014204,
+          "150": -46.66062129593208,
+          "200": -48.9589079257051
+        },
+        "coverage": {
+          "100": 0.95,
+          "50": 0.94,
+          "150": 0.94,
+          "200": 0.95
+        },
+        "ess_reportable": true
+      },
+      "subgroups": {
+        "variable": "sex",
+        "max_disparity": 0.6835430683060109,
+        "max_disparity_stratified": 0.28521795627595475,
+        "rows": [
+          {
+            "subgroup": 1.0,
+            "n": 306,
+            "theta_true_group": 6.160130718954249,
+            "bias_synthesis": 55.5968169752248,
+            "bias_global_rect": 3.187586934172738,
+            "bias_stratified_rect": 0.29230933889838756,
+            "abs_change": 52.40923004105206,
+            "rel_change_pct": 94.26660174504691,
+            "improved": true,
+            "abs_change_stratified": 55.30450763632641,
+            "rel_change_stratified_pct": 99.47423367937031,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          },
+          {
+            "subgroup": 2.0,
+            "n": 337,
+            "theta_true_group": 5.902077151335312,
+            "bias_synthesis": 50.82956259340726,
+            "bias_global_rect": 3.8711300024787487,
+            "bias_stratified_rect": 0.5775272951743423,
+            "abs_change": 46.95843259092851,
+            "rel_change_pct": 92.38409735386305,
+            "improved": true,
+            "abs_change_stratified": 50.25203529823292,
+            "rel_change_stratified_pct": 98.86379644874592,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          }
+        ]
+      }
+    },
+    {
+      "model": "ministral:silicon_sampling",
+      "model_key": "ministral",
+      "method": "silicon_sampling",
+      "n_responses": 643,
+      "theta_true": 6.024883359253499,
+      "n_merged": 643,
+      "n_valid_pairs": 643,
+      "coverage_of_frame": 1.0,
+      "llm": {
+        "theta_hat": 8.078360957642728,
+        "bias": 34.08327557414449,
+        "bias_ci": [
+          32.59619544132909,
+          35.707142625651535
+        ],
+        "signed_bias": 34.08327557414449,
+        "signed_bias_ci": [
+          32.59619544132909,
+          35.707142625651535
+        ],
+        "ci_width": 0.43173727814987983,
+        "n_trials_used": 100,
+        "ess": {
+          "100": 408.6041527115682,
+          "50": 976.8697803971919,
+          "150": 207.26464014893955,
+          "200": 102.96710267779002
+        },
+        "coverage": {
+          "100": 0.0,
+          "50": 0.0,
+          "150": 0.0,
+          "200": 0.0
+        },
+        "ess_reportable": false
+      },
+      "rec_lam_opt": {
+        "theta_hat": 6.000280914277347,
+        "bias": 2.992776607777456,
+        "bias_ci": [
+          0.17472491199063994,
+          8.467028646674809
+        ],
+        "signed_bias": -0.40834724107907744,
+        "signed_bias_ci": [
+          -8.215340223778451,
+          7.262329392614527
+        ],
+        "ci_width": 0.9439513199379737,
+        "n_trials_used": 100,
+        "lam": 0.07194776283326207,
+        "ess": {
+          "100": 2.301934060459434,
+          "50": 4.913508237600944,
+          "150": 1.5391366681377239,
+          "200": 1.283104293755647
+        },
+        "coverage": {
+          "100": 0.96,
+          "50": 0.95,
+          "150": 0.99,
+          "200": 0.96
+        },
+        "ess_reportable": true
+      },
+      "rec_lam_1": {
+        "theta_hat": 5.969511602209943,
+        "bias": 3.3590903515445154,
+        "bias_ci": [
+          0.17177328955753385,
+          8.541347021272179
+        ],
+        "signed_bias": -0.919051104244047,
+        "signed_bias_ci": [
+          -7.712571128546792,
+          6.273577996855336
+        ],
+        "ci_width": 1.3908755410444595,
+        "n_trials_used": 100,
+        "lam": 1.0,
+        "ess": {
+          "100": -50.58646061540172,
+          "50": -43.92441021008256,
+          "150": -53.80863419790331,
+          "200": -58.05325297243969
+        },
+        "coverage": {
+          "100": 1.0,
+          "50": 0.97,
+          "150": 0.93,
+          "200": 0.98
+        },
+        "ess_reportable": true
+      },
+      "subgroups": {
+        "variable": "sex",
+        "max_disparity": 0.7931749341354446,
+        "max_disparity_stratified": 0.9506769619685116,
+        "rows": [
+          {
+            "subgroup": 1.0,
+            "n": 306,
+            "theta_true_group": 6.160130718954249,
+            "bias_synthesis": 30.50397877934566,
+            "bias_global_rect": 2.287157164870583,
+            "bias_stratified_rect": 0.034668476597953704,
+            "abs_change": 28.216821614475077,
+            "rel_change_pct": 92.50210216343409,
+            "improved": true,
+            "abs_change_stratified": 30.469310302747704,
+            "rel_change_stratified_pct": 99.8863476894322,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          },
+          {
+            "subgroup": 2.0,
+            "n": 337,
+            "theta_true_group": 5.902077151335312,
+            "bias_synthesis": 37.305178481016995,
+            "bias_global_rect": 3.0803320990060277,
+            "bias_stratified_rect": 0.9853454385664653,
+            "abs_change": 34.224846382010966,
+            "rel_change_pct": 91.74288336225165,
+            "improved": true,
+            "abs_change_stratified": 36.31983304245053,
+            "rel_change_stratified_pct": 97.35868992245884,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen:concept_guided",
+      "model_key": "qwen",
+      "method": "concept_guided",
+      "n_responses": 643,
+      "theta_true": 6.024883359253499,
+      "n_merged": 643,
+      "n_valid_pairs": 643,
+      "coverage_of_frame": 1.0,
+      "llm": {
+        "theta_hat": 7.838637200736648,
+        "bias": 30.104381002950646,
+        "bias_ci": [
+          29.169644919466688,
+          31.011301199058206
+        ],
+        "signed_bias": 30.104381002950646,
+        "signed_bias_ci": [
+          29.169644919466688,
+          31.011301199058206
+        ],
+        "ci_width": 0.25671189605881745,
+        "n_trials_used": 100,
+        "ess": {
+          "100": 1289.7817225858232,
+          "50": 3017.9742983427936,
+          "150": 754.0597169027948,
+          "200": 470.0783170823584
+        },
+        "coverage": {
+          "100": 0.0,
+          "50": 0.0,
+          "150": 0.0,
+          "200": 0.0
+        },
+        "ess_reportable": false
+      },
+      "rec_lam_opt": {
+        "theta_hat": 6.018749795860799,
+        "bias": 2.7834222186223405,
+        "bias_ci": [
+          0.05638493743287617,
+          7.975982571806526
+        ],
+        "signed_bias": -0.10180385290243947,
+        "signed_bias_ci": [
+          -7.7855631611803275,
+          6.623646105840478
+        ],
+        "ci_width": 0.9252486819234107,
+        "n_trials_used": 100,
+        "lam": 0.37640031026865267,
+        "ess": {
+          "100": 8.950944413299434,
+          "50": 13.003022927321542,
+          "150": 7.9259377576402,
+          "200": 7.1816403726088485
+        },
+        "coverage": {
+          "100": 0.95,
+          "50": 0.94,
+          "150": 0.97,
+          "200": 0.99
+        },
+        "ess_reportable": true
+      },
+      "rec_lam_1": {
+        "theta_hat": 6.022624309392264,
+        "bias": 3.0290278676534803,
+        "bias_ci": [
+          0.3465115811924172,
+          9.028703349660136
+        ],
+        "signed_bias": -0.037495329394661596,
+        "signed_bias_ci": [
+          -6.778706201975159,
+          6.5709099644181
+        ],
+        "ci_width": 0.9974657790765882,
+        "n_trials_used": 100,
+        "lam": 1.0,
+        "ess": {
+          "100": -7.861726168102109,
+          "50": -3.846290924146872,
+          "150": -13.156636890559339,
+          "200": -15.602099734876028
+        },
+        "coverage": {
+          "100": 0.96,
+          "50": 0.97,
+          "150": 0.99,
+          "200": 0.98
+        },
+        "ess_reportable": true
+      },
+      "subgroups": {
+        "variable": "sex",
+        "max_disparity": 0.576813281708284,
+        "max_disparity_stratified": 0.7024906097492445,
+        "rows": [
+          {
+            "subgroup": 1.0,
+            "n": 306,
+            "theta_true_group": 6.160130718954249,
+            "bias_synthesis": 30.82228116660839,
+            "bias_global_rect": 1.607204699871962,
+            "bias_stratified_rect": 0.36072542280012637,
+            "abs_change": 29.21507646673643,
+            "rel_change_pct": 94.7855751127599,
+            "improved": true,
+            "abs_change_stratified": 30.461555743808265,
+            "rel_change_stratified_pct": 98.82966020279592,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          },
+          {
+            "subgroup": 2.0,
+            "n": 337,
+            "theta_true_group": 5.902077151335312,
+            "bias_synthesis": 29.462041226247926,
+            "bias_global_rect": 1.030391418163678,
+            "bias_stratified_rect": 1.063216032549371,
+            "abs_change": 28.43164980808425,
+            "rel_change_pct": 96.5026475580986,
+            "improved": true,
+            "abs_change_stratified": 28.398825193698556,
+            "rel_change_stratified_pct": 96.39123431916681,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen:ft",
+      "model_key": "qwen",
+      "method": "ft",
+      "n_responses": 643,
+      "theta_true": 6.024883359253499,
+      "n_merged": 643,
+      "n_valid_pairs": 643,
+      "coverage_of_frame": 1.0,
+      "llm": {
+        "theta_hat": 4.358029465930018,
+        "bias": 27.666160386918136,
+        "bias_ci": [
+          26.501102642575717,
+          28.841763714936235
+        ],
+        "signed_bias": -27.666160386918136,
+        "signed_bias_ci": [
+          -28.841763714936235,
+          -26.501102642575717
+        ],
+        "ci_width": 0.3919412889203741,
+        "n_trials_used": 100,
+        "ess": {
+          "100": 501.7900752204825,
+          "50": 1232.6371702053818,
+          "150": 262.55844705391786,
+          "200": 144.42620168126678
+        },
+        "coverage": {
+          "100": 0.0,
+          "50": 0.0,
+          "150": 0.0,
+          "200": 0.0
+        },
+        "ess_reportable": false
+      },
+      "rec_lam_opt": {
+        "theta_hat": 6.012188747024639,
+        "bias": 2.715691690712895,
+        "bias_ci": [
+          0.1062628117195453,
+          7.5349266737365586
+        ],
+        "signed_bias": -0.21070303724890038,
+        "signed_bias_ci": [
+          -6.836778812671847,
+          6.2850490404780635
+        ],
+        "ci_width": 0.9582210997268698,
+        "n_trials_used": 100,
+        "lam": 0.034869257018741946,
+        "ess": {
+          "100": 1.4057745256168863,
+          "50": 3.0360913331802135,
+          "150": 0.8009561149884631,
+          "200": 0.5937637733485783
+        },
+        "coverage": {
+          "100": 0.97,
+          "50": 0.97,
+          "150": 0.98,
+          "200": 0.97
+        },
+        "ess_reportable": true
+      },
+      "rec_lam_1": {
+        "theta_hat": 6.050643462246777,
+        "bias": 4.58646997352129,
+        "bias_ci": [
+          0.2572638480415891,
+          13.478259630254195
+        ],
+        "signed_bias": 0.4275618540114353,
+        "signed_bias_ci": [
+          -9.449039031837158,
+          12.699430067169514
+        ],
+        "ci_width": 1.3700995774535891,
+        "n_trials_used": 100,
+        "lam": 1.0,
+        "ess": {
+          "100": -51.44176993653648,
+          "50": -47.570072714454646,
+          "150": -53.859688972261864,
+          "200": -56.84249983659679
+        },
+        "coverage": {
+          "100": 0.95,
+          "50": 0.94,
+          "150": 0.99,
+          "200": 0.95
+        },
+        "ess_reportable": true
+      },
+      "subgroups": {
+        "variable": "sex",
+        "max_disparity": 0.4825510900585597,
+        "max_disparity_stratified": 0.5717315061216609,
+        "rows": [
+          {
+            "subgroup": 1.0,
+            "n": 306,
+            "theta_true_group": 6.160130718954249,
+            "bias_synthesis": 30.291777187837177,
+            "bias_global_rect": 2.93356749313062,
+            "bias_stratified_rect": 0.6820092608407543,
+            "abs_change": 27.358209694706556,
+            "rel_change_pct": 90.31563095479645,
+            "improved": true,
+            "abs_change_stratified": 29.609767926996422,
+            "rel_change_stratified_pct": 97.74853335045543,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          },
+          {
+            "subgroup": 2.0,
+            "n": 337,
+            "theta_true_group": 5.902077151335312,
+            "bias_synthesis": 25.13826043195216,
+            "bias_global_rect": 3.4161185831891796,
+            "bias_stratified_rect": 0.11027775471909344,
+            "abs_change": 21.72214184876298,
+            "rel_change_pct": 86.41068027549947,
+            "improved": true,
+            "abs_change_stratified": 25.027982677233066,
+            "rel_change_stratified_pct": 99.56131509132396,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          }
+        ]
+      }
+    },
+    {
+      "model": "qwen:silicon_sampling",
+      "model_key": "qwen",
+      "method": "silicon_sampling",
+      "n_responses": 643,
+      "theta_true": 6.024883359253499,
+      "n_merged": 643,
+      "n_valid_pairs": 643,
+      "coverage_of_frame": 1.0,
+      "llm": {
+        "theta_hat": 7.91611418047882,
+        "bias": 31.39033087319821,
+        "bias_ci": [
+          30.548212524604896,
+          32.21792993991921
+        ],
+        "signed_bias": 31.39033087319821,
+        "signed_bias_ci": [
+          30.548212524604896,
+          32.21792993991921
+        ],
+        "ci_width": 0.2747581918528022,
+        "n_trials_used": 100,
+        "ess": {
+          "100": 1140.7500610600334,
+          "50": 2578.940603653989,
+          "150": 651.8772266291788,
+          "200": 396.9832042376595
+        },
+        "coverage": {
+          "100": 0.0,
+          "50": 0.0,
+          "150": 0.0,
+          "200": 0.0
+        },
+        "ess_reportable": false
+      },
+      "rec_lam_opt": {
+        "theta_hat": 6.015778380100845,
+        "bias": 2.831898391024913,
+        "bias_ci": [
+          0.14093546042206498,
+          8.053571525143155
+        ],
+        "signed_bias": -0.1511229115916182,
+        "signed_bias_ci": [
+          -6.916233340881018,
+          5.849469109660818
+        ],
+        "ci_width": 0.9258314208851207,
+        "n_trials_used": 100,
+        "lam": 0.32796630000977495,
+        "ess": {
+          "100": 8.008321600946378,
+          "50": 9.886832633230282,
+          "150": 6.513294987676313,
+          "200": 6.00366481075313
+        },
+        "coverage": {
+          "100": 0.97,
+          "50": 0.92,
+          "150": 0.97,
+          "200": 0.98
+        },
+        "ess_reportable": true
+      },
+      "rec_lam_1": {
+        "theta_hat": 6.040600552486188,
+        "bias": 3.326667032653753,
+        "bias_ci": [
+          0.14375354751798125,
+          8.631303046279466
+        ],
+        "signed_bias": 0.2608713280446888,
+        "signed_bias_ci": [
+          -7.9802914028173575,
+          8.026559672843641
+        ],
+        "ci_width": 1.0332762763124805,
+        "n_trials_used": 100,
+        "lam": 1.0,
+        "ess": {
+          "100": -13.452173421578877,
+          "50": -8.464560458186288,
+          "150": -16.551465789123583,
+          "200": -21.66632502901868
+        },
+        "coverage": {
+          "100": 0.97,
+          "50": 0.98,
+          "150": 0.94,
+          "200": 0.97
+        },
+        "ess_reportable": true
+      },
+      "subgroups": {
+        "variable": "sex",
+        "max_disparity": 0.11421019242085523,
+        "max_disparity_stratified": 0.02793574490234449,
+        "rows": [
+          {
+            "subgroup": 1.0,
+            "n": 306,
+            "theta_true_group": 6.160130718954249,
+            "bias_synthesis": 31.087533155994006,
+            "bias_global_rect": 0.3467280931166043,
+            "bias_stratified_rect": 0.1485292282593269,
+            "abs_change": 30.740805062877403,
+            "rel_change_pct": 98.88467157726654,
+            "improved": true,
+            "abs_change_stratified": 30.939003927734678,
+            "rel_change_stratified_pct": 99.52222253334305,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          },
+          {
+            "subgroup": 2.0,
+            "n": 337,
+            "theta_true_group": 5.902077151335312,
+            "bias_synthesis": 31.62393162339582,
+            "bias_global_rect": 0.4609382855374595,
+            "bias_stratified_rect": 0.1764649731616714,
+            "abs_change": 31.16299333785836,
+            "rel_change_pct": 98.54243839404525,
+            "improved": true,
+            "abs_change_stratified": 31.447466650234148,
+            "rel_change_stratified_pct": 99.4419891385973,
+            "improved_stratified": true,
+            "reliable": true,
+            "n_trials_used_stratified": 100,
+            "n_trials_fallback_to_global_lambda": 0
+          }
+        ]
+      }
+    }
+  ]
+}

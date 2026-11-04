@@ -1,0 +1,73 @@
+[project]
+name = "llm-survey-simulation"
+version = "0.1.0"
+description = "Replicating and extending LLM-based survey simulation (Krsteski et al., 2025) on German SOEP data."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+license = { text = "MIT" }
+authors = [{ name = "Julia Mai Quyen Ngo" }]
+
+dependencies = [
+    # data handling 
+    "pandas>=2.2.3",
+    "numpy>=1.26,<3",
+    "pyreadstat>=1.2.7",       # reads SOEP .dta / .sav with value labels
+    "pyarrow>=16.0.0",         # parquet for intermediate artefacts
+    "pyyaml>=6.0.2",
+    "typer>=0.15.3",
+    "tqdm>=4.67.1",
+
+    # statistics / rectification
+    "scipy>=1.15.2",
+    "scikit-learn>=1.6.1",
+    "ppi-python>=0.2.3",       # provides the `ppi_py` module
+
+    # LLM synthesis (local inference only) 
+    "torch>=2.5.0",
+    "transformers>=4.51.3",
+    "accelerate>=1.0.0",
+    "peft>=0.17.1",
+    "sentencepiece>=0.2.0",
+    "protobuf>=5.0",
+
+    # --- plotting / reporting ---
+    "matplotlib>=3.10.1",
+    "seaborn>=0.13.2",
+]
+
+[project.optional-dependencies]
+# Extension C— retrieval strategies
+icl = [
+    "sentence-transformers>=4.1.0",
+    "faiss-cpu>=1.11.0",
+]
+# Faster batched generation on the cluster. Optional: the HF pipeline backend
+# works without it.
+vllm = ["vllm>=0.6.0"]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "ipykernel>=6.29.5",
+]
+
+[project.scripts]
+soepsim-build = "soepsim.preprocessing.build_dataset:app"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 99
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "Q", "I"]
+ignore = ["E203", "E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

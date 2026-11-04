@@ -1,0 +1,21 @@
+# Ministral 8B Instruct | icl | soep_q2
+ 
+model_key: ministral
+method: icl
+hf_model: mistralai/Ministral-8B-Instruct-2410
+ 
+icl_k: 3
+icl_index_dir: outputs/icl_index
+icl_embed_model: paraphrase-multilingual-MiniLM-L12-v2
+ 
+language: de
+batch_size: 32
+max_new_tokens: 8
+flash_attention: false
+enable_thinking: false  # Qwen3 ships a reasoning mode that breaks single-letter output
+seed: 42
+ 
+temperature: 0.7
+do_sample: true
+ 
+output_file: outputs/simulated_data/ministral/icl.csv

@@ -1,0 +1,63 @@
+base_model: Qwen/Qwen3-8B
+tokenizer_type: AutoTokenizer
+
+load_in_8bit: false
+load_in_4bit: false
+strict: false
+
+val_set_size: 0.1
+
+device_map: "auto"
+
+adapter: lora
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_linear: true
+
+datasets:
+  - path: data/human_train.chat.jsonl
+    type: chat_template
+    chat_template: tokenizer_default
+    field_system: system
+    field_messages: conversations
+    message_field_role: role
+    message_field_content: content
+    message_property_mappings:
+      content: content
+
+dataset_prepared_path: outputs/models/qwen/last_run_prepared
+output_dir: outputs/models/qwen/lora
+
+sequence_len: 1024
+sample_packing: false
+pad_to_sequence_len: false
+eval_sample_packing: false
+
+wandb_project:
+wandb_entity:
+wandb_watch:
+wandb_name:
+wandb_log_model:
+
+gradient_accumulation_steps: 1
+micro_batch_size: 3
+num_epochs: 1
+optimizer: adamw_torch_8bit
+lr_scheduler: cosine
+learning_rate: 1e-4          # higher than the reference 1e-5 because LoRA
+
+bf16: auto
+tf32: false
+
+gradient_checkpointing: true
+resume_from_checkpoint:
+logging_steps: 1
+flash_attention: false
+
+warmup_ratio: 0.05           
+saves_per_epoch: 4
+weight_decay: 0.001
+evals_per_epoch: 3
+
+seed: 42

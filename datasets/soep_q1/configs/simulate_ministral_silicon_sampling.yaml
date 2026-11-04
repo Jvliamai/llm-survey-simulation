@@ -1,0 +1,17 @@
+# Ministral 8B Instruct 2410 | silicon_sampling | soep_q1 
+
+model_key: ministral
+method: silicon_sampling
+hf_model: mistralai/Ministral-8B-Instruct-2410
+
+language: de          
+batch_size: 32
+max_new_tokens: 8     
+flash_attention: false
+enable_thinking: false  # Qwen3 ships a reasoning mode that breaks single-letter output
+seed: 42
+
+temperature: 0.7
+do_sample: true
+
+output_file: outputs/simulated_data/ministral/silicon_sampling.csv

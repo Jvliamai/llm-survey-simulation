@@ -1,0 +1,24 @@
+# Qwen3 8B | concept_guided | soep_q2
+
+model_key: qwen
+method: concept_guided
+hf_model: Qwen/Qwen3-8B
+
+language: de          
+batch_size: 32
+max_new_tokens: 8     
+flash_attention: false
+enable_thinking: false  # Qwen3 ships a reasoning mode that breaks single-letter output
+seed: 42
+
+temperature: 0.7
+do_sample: true
+
+output_file: outputs/simulated_data/qwen/concept_guided.csv
+
+persona_input: data/persona_input.csv
+persona_file: outputs/personas/personas.csv
+persona_model:
+  hf_model: Qwen/Qwen3-8B   # one auxiliary model for all runs
+  max_new_tokens: 400
+  batch_size: 16
