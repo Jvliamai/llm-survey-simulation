@@ -37,7 +37,7 @@ repository. All models run locally, and no SOEP data are sent to external APIs.
 | 3 | Fine-tune and synthesise for each adaptation share | cluster (GPU) | RQ3 |
 | 4 | Evaluate and write all tables and figures | cluster or local (CPU) | all |
 
-With existing predictions, steps 1 to 3 can be skipped (see [Evaluation only](#evaluation-only)).
+With existing predictions, steps 1 to 3 can be skipped (see [Step 4](#step-4-evaluation)).
 
 All commands are run from the repository root.
 
