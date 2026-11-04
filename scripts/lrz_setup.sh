@@ -28,14 +28,19 @@ conda activate "${ENV_NAME}"
 pip install --upgrade pip
 pip install torch --index-url https://download.pytorch.org/whl/cu126
 
-# The project itself (editable, so edits on the login node take effect).
-pip install -e ".[dev]"
+# The project itself (editable), including the ICL dependencies.
+pip install -e ".[icl,dev]"
+
+# Fine-tuning (Domain-FT); not a project dependency because it pins its own torch build.
+pip install axolotl==0.12.2
 
 echo ""
 echo "Environment '${ENV_NAME}' ready."
 echo ""
-echo "Add to your ~/.bashrc so weights land on the right filesystem:"
-echo "  export HF_HOME=\$HOME/hf_cache"
-echo "  export SOEPSIM_MODEL_ROOT=/dss/dssmcmlfs01/pn25ju/pn25ju-dss-0000/models"
+echo "Log in to Hugging Face (needed for the gated Llama 3.1 weights):"
+echo "  huggingface-cli login"
+echo ""
+echo "Optionally set the model cache (default: \$HOME/hf_cache):"
+echo "  export HF_HOME=/path/to/hf_cache"
 echo ""
 echo "Check available partitions with:  sinfo"
